@@ -96,5 +96,9 @@ AltAccounts.setState('accountInfo', 'userLoggedIn', your_new_component)
 
 This new component would then show up inside the AccountForm component whenever the current state was set to 'accountInfo'.
 
+# Limitations
 
+The oauth setup dialogs are Blaze templates inside each account-* package.  Since this is a React only accounts package, those dialogs are not available.
+
+The enrollment email path is not provided since that is a very customized path.  It can easly be added by hooking into the onEnrollmentLink Meteor method and creating a custom state.
 
