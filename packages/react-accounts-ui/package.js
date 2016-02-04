@@ -2,7 +2,7 @@ Package.describe({
   name: 'alt:react-accounts-ui',
   version: '0.0.1',
   summary: 'Alternative accounts ui using react',
-  git: '',
+  git: 'https://github.com/Meteor-Alt/accounts/tree/master/packages/react-accounts-ui',
   documentation: 'README.md'
 })
 
