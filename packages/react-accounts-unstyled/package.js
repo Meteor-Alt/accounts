@@ -8,7 +8,8 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1')
-  api.use(['ecmascript', 'underscore', 'session', 'react', 'accounts-base'], 'client')
+  api.use(['ecmascript', 'underscore', 'session', 'accounts-base'], 'client')
+  api.use(['react@0.14.3'], 'client')
   api.imply('accounts-base', ['client', 'server'])
 
   api.use('accounts-oauth', {weak: true})

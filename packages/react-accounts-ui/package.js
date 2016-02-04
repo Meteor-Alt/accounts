@@ -8,7 +8,8 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1')
-  api.use(['ecmascript', 'react', 'less'], 'client')
+  api.use(['ecmascript', 'less'], 'client')
+  api.use(['react@0.14.3'], 'client')
 
   api.use('alt:react-accounts-unstyled@0.0.1', 'client')
 
