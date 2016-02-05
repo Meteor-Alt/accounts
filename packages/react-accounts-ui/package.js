@@ -1,6 +1,6 @@
 Package.describe({
   name: 'alt:react-accounts-ui',
-  version: '0.0.1',
+  version: '0.0.3',
   summary: 'Alternative accounts ui using react',
   git: 'https://github.com/Meteor-Alt/accounts/tree/master/packages/react-accounts-ui',
   documentation: 'README.md'
@@ -18,6 +18,6 @@ Package.onUse(function(api) {
   api.addFiles('alt-accounts.less', 'client')
   api.addFiles('client/login-buttons.jsx', 'client')
 
-  api.export(['LogInButtons'], 'client')
+  api.export(['LogInButtons', 'LogInButtonsDialog'], 'client')
 })
 

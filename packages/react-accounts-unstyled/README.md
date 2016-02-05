@@ -1,5 +1,5 @@
 
-# React Accounts
+# React Accounts (Beta)
 
 Flexible and customizable Meteor Accounts package using React.  Package provides unstyled react components for signing in, signing up, forgot password, and validate email.  Individual components can be easily replaced for advanced customizing.
 
@@ -22,6 +22,8 @@ ReactDom.render(<AccountForm showClose='true' />, document.getElementById('accou
 # Customization
 
 This package can be customized in a variaty of ways to allow other packages to extend it without the need to reproduce the entire signup process.
+
+Similar to accounts-ui you can set the AltAccounts.config.passwordSignupFields to one of ['USERNAME_ONLY', 'EMAIL_ONLY', 'USERNAME_AND_EMAIL', 'USERNAME_AND_OPTIONAL_EMAIL']
 
 ## Text
 

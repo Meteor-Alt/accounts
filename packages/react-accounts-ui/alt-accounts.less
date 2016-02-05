@@ -18,6 +18,16 @@
   padding-top: 10px;
   box-shadow: 10px 10px 5px darkgray;
 
+  // Fix IE drop shadow bug
+  &:after{
+    content: " ";
+    display: block;
+    height: 50px;
+    width: 350px;
+    position: absolute;
+    z-index: -1;
+  }
+
   .alt-accounts-messages-error{
     color: red;
     width: 90%;
@@ -54,12 +64,13 @@
 
     input{
       display: block;
-      width: 90%;
+      width: 87%;
       margin-left: 5%;
       margin-right: 5%;
       margin-bottom: 5%;
       padding-top: 2%;
       padding-bottom: 2%;
+      padding-left: 2%;
       border: solid 1px;
       border-radius: 5px;
     }
@@ -92,3 +103,31 @@
 
 }
 
+
+.alt-accounts-log-in-buttons-dialog{
+
+  .alt-accounts-form-wrapper{
+      display: block;
+      background: rgba(0,0,0,.6);
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 999;
+
+    &:empty{
+      display: none;
+    }
+  }
+
+  .alt-accounts-form{
+    position: fixed;
+    left: 50%;
+    top: 20%;
+    margin-left: -150px;
+    box-shadow: 10px 10px 5px black;
+    border: solid 1px;
+    border-radius: 5px;
+  }
+}
