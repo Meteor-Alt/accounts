@@ -8,13 +8,13 @@ Turnkey React accounts similar to the standard Blaze accounts UI.
 To have a dropdown style menu like accounts-ui use the LogInButtons component.
 
 ```
-ReactDom.render(<LogInbuttons />, document.getElementById('login-buttons')
+ReactDom.render(<LogInButtons />, document.getElementById('login-buttons')
 ```
 
 To have a popup dialog use the LogInButtonsDialog component instead.
 
 ```
-ReactDom.render(<LogInbuttonsDialog />, document.getElementById('login-buttons')
+ReactDom.render(<LogInButtonsDialog />, document.getElementById('login-buttons')
 ```
 
 # Customization
