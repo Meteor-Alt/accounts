@@ -1,5 +1,5 @@
 
-# React Accounts (Beta)
+# React Accounts 
 
 Flexible and customizable Meteor Accounts package using React.  Package provides unstyled react components for signing in, signing up, forgot password, and validate email.  Individual components can be easily replaced for advanced customizing.
 

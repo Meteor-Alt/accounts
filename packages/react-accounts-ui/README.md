@@ -1,5 +1,5 @@
 
-# React Accounts UI (Beta)
+# React Accounts UI 
 
 Turnkey React accounts similar to the standard Blaze accounts UI.
 

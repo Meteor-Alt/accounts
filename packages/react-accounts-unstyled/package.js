@@ -1,6 +1,6 @@
 Package.describe({
   name: 'alt:react-accounts-unstyled',
-  version: '0.0.1',
+  version: '1.0.0',
   summary: 'Alternative unstyled package supporting react accounts',
   git: 'https://github.com/Meteor-Alt/accounts/tree/master/packages/react-accounts-unstyled',
   documentation: 'README.md'
