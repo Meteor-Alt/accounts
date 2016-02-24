@@ -11,23 +11,25 @@ let validatePassword = (name) => {
 }
 
 
-Accounts.onResetPasswordLink((token, done) => {
-  tokenCallback = done
-  passwordToken = token
-  Session.set('Alt-Accounts-Password-Token', 'RESET')
-})
-
-
-Accounts.onEmailVerificationLink((token, done) => {
-  tokenCallback = done
-  Session.set('Alt-Accounts-Password-Token', 'VERIFY')
-  Accounts.verifyEmail(token, (err) => {
-    AltAccounts.currentState('verifyDone')
-    if(err){
-      AltAccounts.setErrorMessage(err.reason)
-    }
+if(Meteor.isClient){
+  Accounts.onResetPasswordLink((token, done) => {
+    tokenCallback = done
+    passwordToken = token
+    SetSession('Alt-Accounts-Password-Token', 'RESET')
   })
-})
+
+  
+  Accounts.onEmailVerificationLink((token, done) => {
+    tokenCallback = done
+    SetSession('Alt-Accounts-Password-Token', 'VERIFY')
+    Accounts.verifyEmail(token, (err) => {
+      AltAccounts.currentState('verifyDone')
+      if(err){
+        AltAccounts.setErrorMessage(err.reason)
+      }
+    })
+  })
+}
 
 
 let FormResetPassword = React.createClass({
@@ -39,7 +41,7 @@ let FormResetPassword = React.createClass({
 
   handleCancel(event){
     event.preventDefault()
-    Session.set('Alt-Accounts-Password-Token', null)
+    SetSession('Alt-Accounts-Password-Token', null)
   },
 
   response(err){
@@ -49,7 +51,7 @@ let FormResetPassword = React.createClass({
       if(tokenCallback)
         tokenCallback()
       tokenCallback = null
-      Session.set('Alt-Accounts-Password-Token', null)
+      SetSession('Alt-Accounts-Password-Token', null)
     }
   },
 
@@ -73,11 +75,11 @@ let FormVerifyDone = React.createClass({
     if(tokenCallback)
       tokenCallback()
     tokenCallback = null
-    Session.set('Alt-Accounts-Password-Token', null)
+    SetSession('Alt-Accounts-Password-Token', null)
   },
 
   getMeteorData(){
-    return {showVerified: !Session.get('Alt-Accounts-Messages-Error')}
+    return {showVerified: !GetSession('Alt-Accounts-Messages-Error')}
   },
   render(){
     return (
@@ -93,7 +95,7 @@ let FormVerifyDone = React.createClass({
 
 
 // Additional user states
-let checkTokenState = (name) => { return Session.get('Alt-Accounts-Password-Token') && Session.get('Alt-Accounts-Password-Token') == name }
+let checkTokenState = (name) => { return GetSession('Alt-Accounts-Password-Token') && GetSession('Alt-Accounts-Password-Token') == name }
 
 AltAccounts.addUserState('userResetPassword', 'resetPassword',  () => { return checkTokenState('RESET') })
 AltAccounts.addUserState('userVerifyEmail',   'verifyingEmail', () => { return checkTokenState('VERIFY') })

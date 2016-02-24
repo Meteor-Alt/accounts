@@ -7,7 +7,7 @@ AccountForm = React.createClass({
   },
 
   getDisplay(){
-    let m = Session.get('Alt-Accounts-Messages-Error')
+    let m = AltAccounts.getErrorMessage()
     let c = AltAccounts.getStateComponent(AltAccounts.currentState())
 
     if(c || m && m.trim() != ''){
@@ -40,7 +40,7 @@ AccountForm = React.createClass({
   },
 
   getDisplayMessages(){
-    let m = Session.get('Alt-Accounts-Messages-Error')
+    let m = AltAccounts.getErrorMessage()
     if(m && m.trim() != '')
       return (
 		<div className="alt-accounts-messages-error">{m}</div>

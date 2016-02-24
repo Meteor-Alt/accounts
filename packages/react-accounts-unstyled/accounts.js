@@ -1,4 +1,19 @@
 
+SetSession = (k, v) => {
+  if(typeof Session != 'undefined'){
+    Session.set(k, v) 
+  }
+}
+
+GetSession = (k) => {
+  if(typeof Session != 'undefined'){
+    return Session.get(k)
+  }else{
+    null
+  }
+}
+
+
 let State = {
   states: {
     loggedOut:      {valid: 'userLoggedOut'},
@@ -30,7 +45,7 @@ let State = {
   },
 
   getCurrent(){
-    var state = Session.get('Alt-Accounts-State')
+    var state = GetSession('Alt-Accounts-State')
     if(State.check(state))
       return state
 
@@ -41,8 +56,8 @@ let State = {
 
   setCurrent(s){ 
     if(State.check(s)){
-      Session.set('Alt-Accounts-State', s) 
-      Session.set('Alt-Accounts-Messages-Error', '')
+      SetSession('Alt-Accounts-State', s) 
+      SetSession('Alt-Accounts-Messages-Error', '')
     }
   },
 
@@ -128,6 +143,8 @@ AltAccounts = {
   oauthServices(){ return AltAccounts.accountsOauth()? Accounts.oauth.serviceNames() : [] },
 
 
-  setErrorMessage(msg){ Session.set('Alt-Accounts-Messages-Error', msg? msg : '') }
+  setErrorMessage(msg){ SetSession('Alt-Accounts-Messages-Error', msg? msg : '') },
+
+  getErrorMessage(){ return GetSession('Alt-Accounts-Messages-Error') }
 }
 
