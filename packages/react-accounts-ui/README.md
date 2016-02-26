@@ -5,6 +5,12 @@ Turnkey React accounts similar to the standard Blaze accounts UI.
 
 # Usage
 
+Include at least one of the standard auth packages.
+
+```
+meteor add accounts-password accounts-facebook
+```
+
 To have a dropdown style menu like accounts-ui use the LogInButtons component.
 
 ```
