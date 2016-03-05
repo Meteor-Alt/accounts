@@ -1,6 +1,6 @@
 Package.describe({
   name: 'alt:react-accounts-unstyled',
-  version: '1.1.0',
+  version: '1.2.0',
   summary: 'Alternative unstyled package supporting react accounts',
   git: 'https://github.com/Meteor-Alt/accounts/tree/master/packages/react-accounts-unstyled',
   documentation: 'README.md'
@@ -9,7 +9,7 @@ Package.describe({
 Package.onUse(function(api) {
   api.versionsFrom('1.2.1')
   api.use(['ecmascript', 'underscore', 'session', 'accounts-base'])
-  api.use(['react@0.14.3'])
+  api.use(['alt:react@1.0.1'])
   api.imply('accounts-base')
 
   api.use('accounts-oauth', {weak: true})
