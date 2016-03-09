@@ -5,14 +5,6 @@ Flexible and customizable Meteor Accounts package using React.  Package provides
 
 See alt:react-accounts-ui for complete turnkey styled package
 
-## Note: NPM React
-
-If your application is installing react from NPM instead of using the Meteor react package you need to also add alt:react-npm.
-
-```
-meteor add alt:react-npm
-```
-
 # Usage
 
 AccountStatus is the react component for displaying the signup button and the uername/logout button.

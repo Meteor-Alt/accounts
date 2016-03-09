@@ -3,15 +3,6 @@
 
 Turnkey React accounts similar to the standard Blaze accounts UI.
 
-## Note: NPM React
-
-If your application is installing react from NPM instead of using the Meteor react package you need to also add alt:react-npm.
-
-```
-meteor add alt:react-npm
-```
-
-
 # Usage
 
 Include at least one of the standard auth packages.
