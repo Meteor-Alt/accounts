@@ -3,6 +3,9 @@
 
 Turnkey React accounts similar to the standard Blaze accounts UI.
 
+* Meteor 1.2
+* Meteor 1.3 + NPM React
+
 # Usage
 
 Include at least one of the standard auth packages.
